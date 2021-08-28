@@ -1,0 +1,36 @@
+/* Globais */
+html {
+    border: 1px solid red;
+}
+
+body {
+    margin: 0;
+  }
+  
+  body {
+    background-color: var(--white-back);
+    color: var(--gray-text);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+  }
+  
+  .container {
+    margin: auto;
+    max-width: 1360px;
+  }
+  
+  .radius-form {
+    border-radius: 0px 10px;
+  }
+  
+  :root {
+    --black: #171617;
+    --gray-text: #636363;
+    --orange-theme: #ffd400;
+    --purple-dark: #2c2c51;
+    --white-back: #f5f7fb;
+  }
+  
+  .text-bold {
+    font-weight: 380;
+  }
