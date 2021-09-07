@@ -1,2 +1,52 @@
 .home {
+    background: var(--white-back);
+    border: 2px solid var(--gray-text);
+    height: 100%;
+    margin: 0;
+    position: relative;
+    text-align: center;
+    width: 350px;
+    
+    -webkit-box-shadow: 3px 4px 5px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow: 3px 4px 5px rgba(50, 50, 50, 0.77);
+    box-shadow: 3px 4px 5px rgba(50, 50, 50, 0.77);
+}
+
+.home-login {
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.home-login_style {
+    color: black;
+    text-align: left;
+    padding-bottom: 10px;
+    padding-top: 15px;
+}
+
+.home-login_style p {
+    font-size: large;
+}
+
+.font-button {
+    position: absolute;
+    font-size: 18px;
+    bottom: 15px;
+    right: 15px;
+}
+
+.other-options {
+    font-size: 14px;
+    padding: 10px;
+    text-align: left;
+}
+
+.other-options a {
+    color: var(--gray-text);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.other-options a:hover {
+    color: var(--blue);
 }

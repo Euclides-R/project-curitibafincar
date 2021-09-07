@@ -1,2 +1,4 @@
-@import './home';
 @import './base';
+@import './home';
+@import './components/';
+@import './layouts';
