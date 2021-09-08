@@ -23,12 +23,12 @@ export default function Home(){
                   />
               <p>Senha:</p>
                   <Input
-                    type="text"
+                    type="password"
                     placeHolder="Digite sua senha"
                   />
                 <p>Confirmar a Senha:</p>
                   <Input
-                    type="text"
+                    type="password"
                     placeHolder="Digite novamente sua senha"
                   />
             </form>
