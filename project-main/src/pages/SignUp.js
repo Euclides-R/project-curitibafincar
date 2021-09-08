@@ -24,7 +24,7 @@ export default function Home(){
               <p>Senha:</p>
                   <Input
                     type="text"
-                    placeHolder="Senha"
+                    placeHolder="Digite sua senha"
                   />
                 <p>Confirmar a Senha:</p>
                   <Input
