@@ -1,0 +1,11 @@
+.signup {
+    background: var(--white-back);
+    border: 3px solid var(--gray-text);
+    height: 500px;
+    padding: 20px;
+    width: 1280px;
+}
+
+.form-signup {
+    border: 1px solid red;
+}

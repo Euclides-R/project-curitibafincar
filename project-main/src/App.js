@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import { Home } from "./pages";
+import { Home, SignUp } from "./pages";
 import { DefaultLayout } from "./layouts";
 
 export default function App() {
@@ -9,6 +9,7 @@ export default function App() {
     <Router>
       <DefaultLayout>
         <Route exact path='/' component={Home} />
+        <Route exact path='/SignUp' component={SignUp} />
       </DefaultLayout>
     </Router>
   );
