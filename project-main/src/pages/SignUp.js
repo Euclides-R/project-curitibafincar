@@ -6,7 +6,7 @@ export default function Home(){
     return(
         <div className='signup radius-form'>
           <h1 className="tytle-page">Cadastro Usuário</h1>
-            <form className='form-signup'>
+            <form className='form-signup text-size'>
               <p>CPNJ: *</p>
                   <Input
                     type="text"
@@ -27,11 +27,12 @@ export default function Home(){
                     type="password"
                     placeHolder="Digite sua senha"
                   />
-                <p>Confirmar a Senha:</p>
-                  <Input
-                    type="password"
-                    placeHolder="Digite novamente sua senha"
-                  />
+              <p>Confirmar a Senha:</p>
+                <Input
+                  type="password"
+                  placeHolder="Digite novamente sua senha"
+                />
+              <Button className="btn-signup radius-form">Confirmar</Button>
             </form>
         </div>
     );

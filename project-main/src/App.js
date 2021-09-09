@@ -10,7 +10,7 @@ export default function App() {
       <DefaultLayout>
         <Route exact path='/' component={Home} />
         <Route exact path='/SignUp' component={SignUp} />
-        <Route exact path='/ResetPass' component={ResetPass} />
+        <Route exact path='/ResetPass' component={ResetPass} />   
       </DefaultLayout>
     </Router>
   );

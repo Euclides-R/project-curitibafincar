@@ -43,3 +43,9 @@ body {
   color: var(--blue);
   margin: 0;
 }
+
+.text-size p {
+  color: var(--blue);
+  font-size: 22px;
+  text-align: left;
+}
