@@ -4,8 +4,15 @@
     height: 500px;
     padding: 20px;
     width: 1280px;
+    text-align: center;
 }
 
 .form-signup {
     border: 1px solid red;
+}
+
+.form-signup p {
+    color: var(--blue);
+    font-size: 22px;
+    text-align: left;
 }

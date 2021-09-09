@@ -19,7 +19,7 @@ export default function Home(){
                 <Button className="login-button radius-form">Entrar</Button>
             </form>
             <div className="other-options">
-                <p>Esqueceu sua senha? <a href="#">Clique aqui</a></p>
+                <p>Esqueceu sua senha? <a href="/ResetPass">Clique aqui</a></p>
                 <p>Não possui cadastro? <a href="/SignUp">Clique aqui</a></p>
             </div>
         </div>

@@ -37,3 +37,9 @@ body {
 .text-bold {
   font-weight: 380;
 }
+
+.tytle-page {
+  font-size: 32px;
+  color: var(--blue);
+  margin: 0;
+}

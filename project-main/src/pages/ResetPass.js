@@ -7,27 +7,12 @@ export default function Home(){
         <div className='signup radius-form'>
           <h1 className="tytle-page">Cadastro Usuário</h1>
             <form className='form-signup'>
-              <p>CPNJ: *</p>
-                  <Input
-                    type="text"
-                    placeHolder="Digite seu nome"
-                  />
-              <p>Razão Social: *</p>
-                  <Input
-                    type="text"
-                    placeHolder="111.222.333-44"
-                  />
-              <p>Email:</p>
-                  <Input
-                    type="text"
-                    placeHolder="curitibafincar@email.com"
-                  />
               <p>Senha:</p>
                   <Input
                     type="password"
                     placeHolder="Digite sua senha"
                   />
-                <p>Confirmar a Senha:</p>
+                <p>Nova Senha:</p>
                   <Input
                     type="password"
                     placeHolder="Digite novamente sua senha"
