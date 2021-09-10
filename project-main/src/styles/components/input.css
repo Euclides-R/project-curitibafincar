@@ -1,4 +1,4 @@
-.insert--registration {
+.input {
     background: none;
     border: none;
     border-bottom: 1px solid var(--gray-text);
@@ -8,4 +8,8 @@
     padding: 5px;
     outline: none;
     width: 100%;
+}
+
+.input.input-primary {
+    background: none;
 }

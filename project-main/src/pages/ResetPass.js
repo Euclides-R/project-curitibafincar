@@ -5,7 +5,7 @@ import { Input, Button } from '../components';
 export default function Home(){
     return(
         <div className='show-box radius-form'>
-          <h1 className="tytle-page">Cadastro Usuário</h1>
+          <h1 className="tytle-page">Recuperar senha</h1>
             <form className='form-rp text-size'>
               <p>C.P.F:</p>
                 <Input

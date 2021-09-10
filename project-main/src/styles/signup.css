@@ -1,14 +1,8 @@
 .signup {
     background: var(--white-back);
-    border: 3px solid var(--gray-text);
-    height: 500px;
     padding: 20px;
-    width: 1280px;
+    width: 450px;
     text-align: center;
-}
-
-.form-signup {
-    border: 1px solid red;
 }
 
 .btn-signup {
