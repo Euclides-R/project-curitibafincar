@@ -15,16 +15,15 @@ export default function Home(){
 
     return(
         <div className='show-box radius-form'>
-            <h1 className='tytle-page'> CuritibaFinCar </h1>
-            <form onSubmit={handleSubmit} className="home-login text-size">
-                <p>CPF:</p>
-                    <Input 
-                        className="input-login"
+            <h1 className='title-page'> CuritibaFinCar </h1>
+            <form onSubmit={handleSubmit} className="text-size">
+                <p>Email:</p>
+                    <Input
                         value={inputLogin}
                         onChange={(e) => {console.log('alo');
                             setinputLogin(e.target.value)}}
                         type="text"
-                        placeHolder="CPF"
+                        placeHolder="curitibafincar@financas.com.br"
                     />
                 <p>Senha:</p>
                     <Input

@@ -19,9 +19,17 @@
 .btn.btn-primary {
   background-color: var(--blue);
   color: var(--white-back);
+  font-size: 18px;
+  margin-top: 15px;
 }
 
 .btn.btn-primary:hover {
   background-color: var(--green-theme);
+}
+
+.btn-position {
+  bottom: 10px;
+  position: absolute;
+  right: 10px;
 }
   

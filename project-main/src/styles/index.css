@@ -1,6 +1,6 @@
 @import './base';
 @import './components/';
-@import './home';
 @import './layouts';
-@import './resetpass.css';
-@import './signup.css';
+@import './signup';
+@import './simulation';
+@import './style-admin/'
