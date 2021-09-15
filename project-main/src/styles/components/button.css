@@ -1,0 +1,28 @@
+.btn {
+    background-color: transparent;
+    border: none;
+    color: black;
+    cursor: pointer;
+    justify-content: center;
+    padding: 10px 15px;
+    text-decoration: none;
+  
+    -webkit-box-shadow: 3px 4px 5px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow: 3px 4px 5px rgba(50, 50, 50, 0.77);
+    box-shadow: 3px 4px 5px rgba(50, 50, 50, 0.77);
+  }
+
+.btn:hover {
+   background-color: gray;
+}
+
+.btn.btn-primary {
+  background-color: var(--blue);
+  color: var(--white-back);
+}
+
+.btn.btn-primary:hover {
+  background-color: var(--green-theme);
+}
+
+  
