@@ -38,5 +38,5 @@ export default function ListFin(){
                 <Button className="btn-position radius-form">Atualizar Lista</Button>
             </div>
         </div>
-    )
-}
+    );
+};

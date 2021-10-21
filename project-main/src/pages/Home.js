@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { AuthContext } from '../hooks/auth';
 
 import { Input, Button } from '../components';
+import { withRouter } from 'react-router';
 
-export default function Home(){
-
+const Home = ({
+    history
+}) => {
     const [inputLogin, setinputLogin] = useState('');
     const [inputPassword, setinputPassword] = useState('');
 
+    const { setUser } = useContext(AuthContext);
+
     function handleSubmit(e) {
-        e.preventDefault();
-        
-        console.log(inputLogin);    
+        const { user, name} = e.target;
+        setinputLogin({
+                ...inputLogin,
+                [name]: user,
+        });
+        setUser(false);
+        history.push("/simulation");
     }
 
     return(
@@ -33,7 +42,7 @@ export default function Home(){
                         type="password"
                         placeHolder="Senha"
                     />
-                <Button className="login-button radius-form">Entrar</Button>
+                <Button className="login-button radius-form" onClick={handleSubmit}>Entrar</Button>
             </form>
             <div className="other-options">
                 <p>Esqueceu sua senha? <a href="/ResetPass">Clique aqui</a></p>
@@ -42,3 +51,5 @@ export default function Home(){
         </div>
     );
 };
+
+export default withRouter(Home);

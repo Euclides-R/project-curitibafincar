@@ -4,8 +4,8 @@ import { Input, Button } from '../components';
 
 export default function Home(){
 
-  const [nome, setNome] = useState('');
-  const [sobrenome, setSobrenome] = useState('');
+  const [name, setName] = useState('');
+  const [lastName, setLastname] = useState('');
   const [cpf, setCpf] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -13,7 +13,7 @@ export default function Home(){
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log(nome, sobrenome, cpf, email, password);
+    console.log(name, lastName, cpf, email, password);
     
   }
 
@@ -23,15 +23,15 @@ export default function Home(){
             <form onSubmit={handleSubmit} className='text-size'>
               <p>Nome: *</p>
                 <Input
-                  value={nome}
-                  onChange={(e) => {setNome(e.target.value)}}
+                  value={name}
+                  onChange={(e) => {setName(e.target.value)}}
                   type="text"
                   placeHolder="Curitiba"
                 />
               <p>Sobrenome: *</p>
                 <Input
-                  value={cpf}
-                  onChange={(e) => {setSobrenome(e.target.value)}}
+                  value={lastName}
+                  onChange={(e) => {setLastname(e.target.value)}}
                   type="text"
                   placeHolder="FinCar"
                 />
@@ -56,7 +56,7 @@ export default function Home(){
                     type="password"
                     placeHolder="Digite sua senha"
                   />
-              <Button className="btn-signup radius-form">Confirmar</Button>
+              <Button className="btn-signup radius-form">Cadastrar</Button>
             </form>
             <div className="other-options">
                 <p>Já possui conta? <a href="/">Entrar</a></p>
