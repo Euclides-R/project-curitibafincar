@@ -17,11 +17,11 @@ export default function App() {
           <Route exact path='/' component={Home} />
           <Route exact path='/resetPass' component={ResetPass} />
           <Route exact path='/signUp' component={SignUp} />
-          <Private exact path='/simulation' component={Simulation} />
-          <Private exact path='/newfin' component={NewFin} />
-          <Private exact path='/listfin' component={ListFin} />
-          <Private exact path='/proposalsreceived' component={ProposalsReceived} />    
-          <Private exact path='/financings' component={Financings} />    
+          <Route exact path='/simulation' component={Simulation} />
+          <Route exact path='/newfin' component={NewFin} />
+          <Route exact path='/listfin' component={ListFin} />
+          <Route exact path='/proposalsreceived' component={ProposalsReceived} />    
+          <Route exact path='/financings' component={Financings} />    
         </DefaultLayout>
       </Router>
     </AuthProvider>

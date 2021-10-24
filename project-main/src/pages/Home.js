@@ -18,7 +18,7 @@ const Home = ({
                 ...inputLogin,
                 [name]: user,
         });
-        setUser(false);
+        setUser(true);
         history.push("/simulation");
     }
 
