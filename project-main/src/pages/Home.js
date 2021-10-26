@@ -3,6 +3,7 @@ import { AuthContext } from '../hooks/auth';
 
 import { Input, Button } from '../components';
 import { withRouter } from 'react-router';
+import Accounts from '../hooks/acc';
 
 const Home = ({
     history
@@ -12,14 +13,21 @@ const Home = ({
 
     const { setUser } = useContext(AuthContext);
 
+    let currentAccount;
+
     function handleSubmit(e) {
+        e.preventDefault();
+
         const { user, name} = e.target;
         setinputLogin({
                 ...inputLogin,
                 [name]: user,
         });
-        setUser(true);
-        history.push("/simulation");
+        currentAccount = Accounts.find(
+            acc => acc.name === inputLogin.value
+        )
+        console.log(currentAccount);
+        
     }
 
     return(
@@ -29,8 +37,9 @@ const Home = ({
                 <p>Email:</p>
                     <Input
                         value={inputLogin}
-                        onChange={(e) => {console.log('alo');
-                            setinputLogin(e.target.value)}}
+                        onChange={(e) => {
+                            setinputLogin(e.target.value)
+                        }}
                         type="text"
                         placeHolder="curitibafincar@financas.com.br"
                     />
@@ -42,7 +51,7 @@ const Home = ({
                         type="password"
                         placeHolder="Senha"
                     />
-                <Button className="login-button radius-form" onClick={handleSubmit}>Entrar</Button>
+                <Button className="login-button radius-form">Entrar</Button>
             </form>
             <div className="other-options">
                 <p>Esqueceu sua senha? <a href="/ResetPass">Clique aqui</a></p>
