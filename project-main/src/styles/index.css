@@ -1,4 +1,6 @@
 @import './base';
-@import './home';
 @import './components/';
 @import './layouts';
+@import './signup';
+@import './simulation';
+@import './style-admin/'

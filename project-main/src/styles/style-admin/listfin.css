@@ -1,0 +1,15 @@
+.list-financings {
+    margin-bottom: 50px;
+    max-height: 300px;
+    overflow-y: scroll;
+    text-align: left;
+}
+
+.list-table {
+    min-width: 600px;
+}
+
+.list-table tr td {
+    font-size: 16px;
+    padding: 10px;
+}

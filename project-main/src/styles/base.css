@@ -16,24 +16,80 @@ body {
   font-weight: 400;
   height: 100vh;
   color: #333;
-  background-image: linear-gradient(to top left, #2193b0 0%, #00cdac 100%);
+  background: linear-gradient(to top left, #2193b0 0%, #2FBF71 100%);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.bold-font {
+  font-weight: bold;
+}
+
+form {
+  padding: 10px;
+}
+
 .radius-form {
+  border: 1px solid var(--color);
   border-radius: 10px 0px;
 }
  
 :root {
-  --black: #171617;
+  --black: #3F334D;
+  --blue: #2193b0;
   --gray-text: #636363;
   --green-theme: #00cdac;
-  --blue: #2193b0;
   --white-back: #f5f7fb;
+}
+
+.show-box {
+  background: var(--white-back);
+  height: 100%;
+  margin: 0;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  min-width: 350px;
+  
+  -webkit-box-shadow: 3px 4px 5px var(--black);
+  -moz-box-shadow: 3px 4px 5px var(--black);
+  box-shadow: 3px 4px 5px var(--black);
 }
   
 .text-bold {
   font-weight: 380;
+}
+
+.title-page {
+  font-size: 32px;
+  color: var(--blue);
+  margin: 0;
+}
+
+.text-size p {
+  color: var(--blue);
+  font-size: 18px;
+  text-align: left;
+}
+
+/* Other Options */
+.other-options {
+  font-size: 14px;
+  padding: 10px;
+  text-align: left;
+}
+
+.other-options p {
+  padding: 5px;
+}
+
+.other-options a {
+  color: var(--gray-text);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.other-options a:hover {
+  color: var(--blue);
 }

@@ -7,9 +7,9 @@
     padding: 10px 15px;
     text-decoration: none;
   
-    -webkit-box-shadow: 3px 4px 5px rgba(50, 50, 50, 0.77);
-    -moz-box-shadow: 3px 4px 5px rgba(50, 50, 50, 0.77);
-    box-shadow: 3px 4px 5px rgba(50, 50, 50, 0.77);
+    -webkit-box-shadow: 1px 2px 3px var(--black);
+    -moz-box-shadow: 2px 3px 4px var(--black);
+    box-shadow: 1px 2px 3px var(--black);
   }
 
 .btn:hover {
@@ -19,10 +19,17 @@
 .btn.btn-primary {
   background-color: var(--blue);
   color: var(--white-back);
+  font-size: 18px;
+  margin-top: 15px;
 }
 
 .btn.btn-primary:hover {
   background-color: var(--green-theme);
 }
 
+.btn-position {
+  bottom: 10px;
+  position: absolute;
+  right: 10px;
+}
   

@@ -1,44 +1,43 @@
 import React, { useState } from 'react';
 
-import { Input, Button } from '../components';
+import { Button, Input } from '../../components';
 
-export default function Home(){
-
-  const [name, setName] = useState('');
-  const [lastName, setLastname] = useState('');
-  const [cpf, setCpf] = useState('');
+export default function NewFin(){
+    const [name, setName] = useState('');
+  const [corporateName, setCorporatename] = useState('');
+  const [cnpj, setCnpj] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log(name, lastName, cpf, email, password);
+    console.log(name, corporateName, cnpj, email, password);
     
   }
 
     return(
         <div className='show-box radius-form'>
-          <h1 className="title-page">Cadastrar Usuário</h1>
+          <h1 className="title-page">Cadastrar nova Financeira</h1>
             <form onSubmit={handleSubmit} className='text-size'>
-              <p>Nome: *</p>
+              <p>Empresa: *</p>
                 <Input
                   value={name}
                   onChange={(e) => {setName(e.target.value)}}
                   type="text"
                   placeHolder="Curitiba"
                 />
-              <p>Sobrenome: *</p>
+              <p>Razão Social: *</p>
                 <Input
-                  value={lastName}
-                  onChange={(e) => {setLastname(e.target.value)}}
+                  value={corporateName}
+                  onChange={(e) => {setCorporatename(e.target.value)}}
                   type="text"
-                  placeHolder="FinCar"
+                  placeHolder="Curitiba"
                 />
-              <p>C.P.F: *</p>
+              <p>C.N.P.J: *</p>
                 <Input
-                  value={cpf}
-                  onChange={(e) => {setCpf(e.target.value)}}
+                  value={cnpj}
+                  onChange={(e) => {setCnpj(e.target.value)}}
                   type="text"
                   placeHolder="111.222.333-44"
                 />
@@ -58,9 +57,6 @@ export default function Home(){
                   />
               <Button className="btn-signup radius-form">Cadastrar</Button>
             </form>
-            <div className="other-options">
-                <p>Já possui conta? <a href="/">Entrar</a></p>
-            </div>
         </div>
     );
 };
