@@ -8,6 +8,11 @@ module.exports = {
       autoIncrement: true,
       primaryKey:true
     },
+    user_common: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      default: "user",
+    },
     name:{
       type: Sequelize.STRING(100),
       allowNull:false

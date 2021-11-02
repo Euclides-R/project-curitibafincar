@@ -8,12 +8,17 @@ module.exports = {
       autoIncrement: true,
       primaryKey:true
     },
+    user_common: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      default: "admin",
+    },
     name:{
       type: Sequelize.STRING(100),
       allowNull:false
     },
     cpf: {
-      type: Sequelize.DATE,
+      type: Sequelize.INTEGER,
       allowNull: false
     },
     email:{
