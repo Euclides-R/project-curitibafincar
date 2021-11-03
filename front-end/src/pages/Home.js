@@ -3,30 +3,35 @@ import { AuthContext } from '../hooks/auth';
 
 import { Input, Button } from '../components';
 import { withRouter } from 'react-router';
-import Accounts from '../hooks/acc';
 
 const Home = ({
     history
 }) => {
-    const [inputLogin, setinputLogin] = useState('');
-    const [inputPassword, setinputPassword] = useState('');
+    const [inputLogin, setInputLogin] = useState({});
 
-    const { setUser } = useContext(AuthContext);
+    const { verifyAccount, user } = useContext(AuthContext);
 
-    let currentAccount;
 
     function handleSubmit(e) {
-        e.preventDefault();
+        e.preventDefault();    
+        console.log(inputLogin);
 
-        const { user, name} = e.target;
-        setinputLogin({
-                ...inputLogin,
-                [name]: user,
-        });
-        currentAccount = Accounts.find(
-            acc => acc.name === inputLogin.value
-        )
-        console.log(currentAccount);
+        try {
+            verifyAccount(inputLogin);
+            if(user.password) {
+                history.push('/simulation');
+            }
+        } catch (error) {
+            alert(error);
+        }
+
+        // setUser(true);
+
+        // if(inputLogin === true) {
+        //     history.href('/simulation');
+        // } else {
+        //     console.log('Usuário não existe');
+        // }
         
     }
 
@@ -36,18 +41,28 @@ const Home = ({
             <form onSubmit={handleSubmit} className="text-size">
                 <p>Email:</p>
                     <Input
-                        value={inputLogin}
+                        name='email'
+                        value={inputLogin.email}
                         onChange={(e) => {
-                            setinputLogin(e.target.value)
+                            setInputLogin({
+                                ...inputLogin,
+                                [e.target.name]: e.target.value,
+                            });
                         }}
                         type="text"
                         placeHolder="curitibafincar@financas.com.br"
                     />
                 <p>Senha:</p>
                     <Input
+                        name='password'
                         className="password-login"
-                        value={inputPassword}
-                        onChange={(e) => {setinputPassword(e.target.value)}} 
+                        value={inputLogin.password}
+                        onChange={(e) => {
+                            setInputLogin({
+                                ...inputLogin,
+                                [e.target.name]: e.target.value,
+                            });
+                        }} 
                         type="password"
                         placeHolder="Senha"
                     />

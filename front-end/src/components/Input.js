@@ -7,7 +7,8 @@ export default function Input({
   placeHolder,
   onChange,
   kind,
-  className
+  className,
+  ...rest
 }) {
     return (
         <input 
@@ -15,6 +16,7 @@ export default function Input({
           type={type}
           placeholder={placeHolder}
           onChange={onChange}
+          {...rest}
         />
     )  
 }

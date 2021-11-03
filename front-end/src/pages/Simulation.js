@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Input, Button } from '../components';
+import { Input, Button, Select } from '../components';
 
 export default function Home(){
 
@@ -19,12 +19,17 @@ export default function Home(){
             <h1 className='title-page'> Simulação de Refinanciamento </h1>
             <form onSubmit={handleSubmit} className="simulation-box text-size">
                 <p>Financeira:</p>
-                    <Input
+                    <Select
                         value={financial}
                         onChange={(e) => {setFinancial(e.target.value)}}
                         type="text"
                         placeHolder="Itaú"
-                    />
+                    >
+                        <option value="itau">Itaú</option>
+                        <option value="santander">Santander</option>
+                        <option value="bradesco">Bradesco</option>
+                        <option value="bbrasil">Banco do Brasil</option>
+                    </Select>
                 <p>Valor:</p>
                     <Input
                         value={value}
