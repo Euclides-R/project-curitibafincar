@@ -9,7 +9,7 @@ module.exports = {
       primaryKey:true
     },
     user_common: {
-      type: Sequelize.STRING,
+      type: Sequelize.STRING(100),
       allowNull: false,
       default: "user",
     },
@@ -18,11 +18,11 @@ module.exports = {
       allowNull:false
     },
     cpf: {
-      type: Sequelize.DATE,
+      type: Sequelize.INTEGER(20),
       allowNull: false
     },
     email:{
-      type: Sequelize.STRING(20),
+      type: Sequelize.STRING(100),
       allowNull: true
     },
     password: {
