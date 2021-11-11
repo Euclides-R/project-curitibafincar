@@ -3,14 +3,14 @@ import Contratc from '../models/Contratc';
 
 class UsersControllers {
     async store (req, res) {
-        const user = await Users.create(res.body);
+        const user = await Users.create(req.body);
         return res.json(user)
     }
     async index (req, res) {
         const user = await Users.findAll({
             attributes: [
                 'id',
-                'user_common',
+                'type_user',
                 'name',
                 'cpf',
                 'email',
@@ -39,7 +39,7 @@ class UsersControllers {
         const user = await Users.findAll({
             attributes: [
                 'id',
-                'user_common',
+                'type_user',
                 'name',
                 'cpf',
                 'email',
@@ -48,7 +48,7 @@ class UsersControllers {
             include: [
                 { 
                     model: Contratc,
-                    as: 'users'
+                    as: 'contratc'
                 }
             ]
         });

@@ -25,4 +25,4 @@ class Companies extends Model {
 }
 
 
-export default Users;
+export default Companies;

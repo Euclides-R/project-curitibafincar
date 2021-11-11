@@ -3,7 +3,7 @@ import Contratc from '../models/Contratc';
 
 class CompaniesController {
     async store (req, res) {
-        const companies = await Companies.create(res.body);
+        const companies = await Companies.create(req.body);
         return res.json(companies)
     }
     async index (req, res) {

@@ -4,7 +4,8 @@ class Users extends Model {
     static init (sequelize) {
         super.init(
             {
-                user_common: Sequelize.STRING(100),
+                id: Sequelize.INTEGER,
+                type_user: Sequelize.STRING(100),
                 name: Sequelize.STRING(100),
                 cpf: Sequelize.INTEGER(20),
                 email: Sequelize.STRING(100),
