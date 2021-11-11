@@ -1,11 +1,24 @@
 .pending {
     border: 2px solid red;
-    height: 300px;
+    height: auto;
     text-align: left;
-    width: 700px;
+    width: 100%;
 }
 
 .pending p {
     font-size: 22px;
     padding: 10px;
+}
+
+.list-table td {
+    border: 1px solid red;
+}
+
+tbody td {
+    text-align: center;
+}
+
+input[type="radio"]{
+    margin-left: 10px;
+    margin-right: 3px;
 }

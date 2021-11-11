@@ -14,7 +14,8 @@ module.exports = {
     companies: Sequelize.STRING(100),
     amout_times: Sequelize.STRING(100),
     entry_date: Sequelize.DATE,
-    installments_date: Sequelize.DATE
+    installments_date: Sequelize.DATE,
+    status: Sequelize.BOOLEAN
  }),
    
   down: (queryInterface) => queryInterface.dropTable("curso")
