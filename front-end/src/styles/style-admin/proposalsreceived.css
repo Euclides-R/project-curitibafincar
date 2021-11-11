@@ -1,5 +1,4 @@
 .pending {
-    border: 2px solid red;
     height: auto;
     text-align: left;
     width: 100%;
@@ -11,7 +10,8 @@
 }
 
 .list-table td {
-    border: 1px solid red;
+    border: 1px solid gray;
+    border-radius: 5px;
 }
 
 tbody td {
