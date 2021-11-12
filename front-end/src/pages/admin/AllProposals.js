@@ -57,6 +57,7 @@ export default function AllProposals() {
                 </table>
                 <Button className="btn-position radius-form">Atualizar</Button>
             </div>
+            <Button className="radius-form" kind="second" url="/AdminHome">Voltar</Button>
         </div>
     )
 }

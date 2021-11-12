@@ -58,6 +58,7 @@ export default function NewFin() {
         />
         <Button className="btn-signup radius-form">Cadastrar</Button>
       </form>
+      <Button className="btn-position radius-form" kind="second" url="/AdminHome">Voltar</Button>
     </div>
   );
 };

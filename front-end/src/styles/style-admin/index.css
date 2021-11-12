@@ -1,2 +1,6 @@
 @import './listfin';
 @import './proposalsreceived';
+
+.admin-home {
+    margin: 50px;
+}

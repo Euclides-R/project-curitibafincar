@@ -32,6 +32,7 @@ export default function Financings() {
                 </table>
                 <Button className="btn-position radius-form">Atualizar Lista</Button>
             </div>
+            <Button className="radius-form" kind="second" url="/AdminHome">Voltar</Button>
         </div>
     );
 };

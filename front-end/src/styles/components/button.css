@@ -27,6 +27,19 @@
   background-color: var(--green-theme);
 }
 
+.btn.btn-second {
+  background-color: var(--black);
+  color: var(--white-back);
+  font-size: 18px;
+  margin: 15px;
+}
+
+.btn.btn-second:hover {
+  background-color: var(--white-back);
+  color: var(--black);
+  font-weight: bold;
+}
+
 .btn-position {
   bottom: 10px;
   position: absolute;

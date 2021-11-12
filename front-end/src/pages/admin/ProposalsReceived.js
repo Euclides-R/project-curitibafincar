@@ -125,6 +125,7 @@ export default function ProposalsReceived() {
                 </table>
                 <Button className="btn-position radius-form">Resultado</Button>
             </div>
+            <Button className="radius-form" kind="second" url="/AdminHome">Voltar</Button>
         </div>
     )
 }
