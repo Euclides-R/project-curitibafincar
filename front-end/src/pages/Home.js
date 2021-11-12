@@ -2,25 +2,11 @@ import React, { useState, useContext } from 'react';
 import { AuthContext } from '../hooks/auth';
 
 import { Input, Button } from '../components';
-import { withRouter } from 'react-router';
 
-const Home = ({
-    history
-}) => {
+export default function Home() {
     const [inputLogin, setInputLogin] = useState({});
 
     const { verifyAccount, user } = useContext(AuthContext);
-
-    function renderUser(acc) {
-        if (acc.type === 'user') {
-            console.log('puxou a página');
-            return history.push('/simulation');
-        } else if (acc.type === 'admin') {
-            console.log('puxou a página');
-            return history.push('/proposalsreceived')
-        }
-    }
-
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -28,21 +14,19 @@ const Home = ({
         try {
             verifyAccount(inputLogin);
             if (user.password) {
-                console.log('pegou informação');
-                renderUser(inputLogin);
+                renderpage()
             }
         } catch (error) {
             alert(error);
         }
+    }
 
-        // setUser(true);
-
-        // if(inputLogin === true) {
-        //     history.href('/simulation');
-        // } else {
-        //     console.log('Usuário não existe');
-        // }
-
+    function renderpage() {
+        if (user.type === 'user') {
+            return 
+        } else if (user.type === 'admin') {
+            return 
+        }
     }
 
     return (
@@ -85,5 +69,3 @@ const Home = ({
         </div>
     );
 };
-
-export default withRouter(Home);

@@ -5,7 +5,7 @@ const account1 = {
 };
 
 const account2 = {
-  owner: 'Jessica Davis',
+  owner: 'veronica',
   password: '2222',
   type: 'user',
 };
