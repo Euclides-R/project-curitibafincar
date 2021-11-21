@@ -1,35 +1,36 @@
-'use strict';
+"use strict";
 
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable("constratcs", {
-    id: {
-      type: Sequelize.INTEGER,
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true
-    },
-    type_contratc: {
-      type: Sequelize.STRING(100),
-      allowNull: false,
-      default: "user",
-    },
-    companies: {
-      type: Sequelize.STRING(100),
-      allowNull: false
-    },
-    amount_times: {
-      type: Sequelize.INTEGER,
-      allowNull: false,
-    },
-    entry_date: {
-      type: Sequelize.DATE,
-      allowNull: false
-    },
-    installments_date: {
-      type: Sequelize.DATE,
-      allowNull: false
-    },
-  }),
+  up: (queryInterface, Sequelize) =>
+    queryInterface.createTable("constratcs", {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER,
+      },
+      type_contratc: {
+        allowNull: false,
+        default: "user",
+        type: Sequelize.STRING(100),
+      },
+      companies: {
+        allowNull: false,
+        type: Sequelize.STRING(100),
+      },
+      amount_times: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+      },
+      entry_date: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+      installments_date: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+    }),
 
-  down: (queryInterface) => queryInterface.dropTable("contratcs")
+  down: (queryInterface) => queryInterface.dropTable("contratcs"),
 };
