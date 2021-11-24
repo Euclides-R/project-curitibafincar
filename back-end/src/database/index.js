@@ -1,22 +1,22 @@
-import Sequelize from 'sequelize';
-import databaseConfig from '../config/database';
-import Users from '../app/models/Users';
-import Contratc from '../app/models/Contratc';
-const models = [Users, Contratc];
- 
+import Sequelize from "sequelize";
+import databaseConfig from "../config/database";
+import Companie from "../app/models/Companie";
+import testconnection from '../config/testconnection';
+const models = [Companie];
+
 class Database {
-  constructor(){
-      this.init();
+  constructor() {
+    this.init();
   }
- 
-  init(){
+
+  init() {
     this.connection = new Sequelize(databaseConfig);
     models.map((model) => model.init(this.connection))
-      .map((model) => {
-          if(model.associate) model.associate(this.connection.models);
-          return model;
-      })
+      // .map((model) => {
+      //     if(model.associate) model.associate(this.connection.models);
+      //     return model;
+      // })
   }
 }
- 
+
 export default new Database();
