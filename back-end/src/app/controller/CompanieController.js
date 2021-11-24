@@ -4,7 +4,7 @@ import Companie from "../models/Companie";
 class CompanieController {
   async store(req, res) {
     const companie = await Companie.create(req.body);
-    return res.json(companie)
+    console.log(res.json(companie))
   }
 
   async index(req, res) {

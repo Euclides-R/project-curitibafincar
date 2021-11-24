@@ -9,5 +9,5 @@ module.exports = {
     allowNull:true
   }),
  
-  down: (queryInterface) => queryInterface.removeColumn("contracts", "users_id")
+  down: (queryInterface)=> queryInterface.removeColumn("contracts", "users_id")
 };

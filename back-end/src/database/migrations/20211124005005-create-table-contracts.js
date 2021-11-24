@@ -2,35 +2,31 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) =>
-    queryInterface.createTable("constratcs", {
+    queryInterface.createTable("contracts", {
       id: {
+        type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
       },
-      type_contratc: {
-        allowNull: false,
-        default: "user",
+      type_contract: {
         type: Sequelize.STRING(100),
-      },
-      companies: {
         allowNull: false,
-        type: Sequelize.STRING(100),
+        defaultValue: "FINANCIMANTO",
       },
       amount_times: {
-        allowNull: false,
         type: Sequelize.INTEGER,
+        allowNull: false,
       },
       entry_date: {
-        allowNull: false,
         type: Sequelize.DATE,
+        allowNull: false,
       },
       installments_date: {
-        allowNull: false,
         type: Sequelize.DATE,
+        allowNull: false,
       },
     }),
 
-  down: (queryInterface) => queryInterface.dropTable("contratcs"),
+  down: (queryInterface) => queryInterface.dropTable("contracts"),
 };

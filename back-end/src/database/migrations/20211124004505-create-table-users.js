@@ -12,14 +12,14 @@ module.exports = {
       type_user: {
         type: Sequelize.STRING(100),
         allowNull: false,
-        default: "user",
+        defaultValue: "user",
       },
       name: {
         type: Sequelize.STRING(100),
         allowNull: false,
       },
       cpf: {
-        type: Sequelize.STRING(100),
+        type: Sequelize.BIGINT,
         allowNull: false,
       },
       email: {
@@ -32,5 +32,5 @@ module.exports = {
       },
     }),
 
-  down: (queryInterface) => queryInterface.dropTable("users"),
+  down: (queryInterface) => queryInterface.dropTable('users'),
 };

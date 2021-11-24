@@ -9,10 +9,10 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
-      user_common: {
+      type_user: {
         type: Sequelize.STRING,
         allowNull: false,
-        default: "admin",
+        defaultValue: "adm",
       },
       name: {
         type: Sequelize.STRING(100),
