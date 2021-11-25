@@ -4,14 +4,27 @@ class Contract extends Model {
   static init(sequelize) {
     super.init(
       {
-        type_contract: Sequelize.STRING(100),
-        amount_time: Sequelize.INTEGER,
-        entry_date: Sequelize.DATE,
-        installments_rate: Sequelize.DATE,
+        type_contract: {
+          type: Sequelize.STRING(100),
+          allowNull: false,
+          defaultValue: "FINANCIMANTO",
+        },
+        amount_times: {
+          type: Sequelize.INTEGER,
+          allowNull: false,
+        },
+        entry_date: {
+          type: Sequelize.DATE,
+          allowNull: false,
+        },
+        installments_date: {
+          type: Sequelize.DATE,
+          allowNull: false,
+        },
       },
       {
         sequelize,
-        tableName: "contracts",
+        tableName: 'contracts',
       }
     );
 
