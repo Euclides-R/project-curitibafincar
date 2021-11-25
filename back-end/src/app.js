@@ -1,6 +1,7 @@
 import express from 'express';
 import routes from './routes';
 import cors from 'cors';
+import './database';
  
 //Criamos uma classe para trabalhar com apenas uma instancia do server
 class App {
