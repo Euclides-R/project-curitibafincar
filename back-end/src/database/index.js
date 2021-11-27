@@ -1,10 +1,10 @@
 import Sequelize from "sequelize";
 import databaseConfig from "../config/database";
-import Company from "../app/models/Company";
+import Companie from "../app/models/Companie";
 import Contract from "../app/models/Contract";
 import User from "../app/models/User";
 import testconnection from '../config/testconnection';
-const models = [Company, Contract, User];
+const models = [Companie, Contract, User];
 
 class Database {
   constructor() {

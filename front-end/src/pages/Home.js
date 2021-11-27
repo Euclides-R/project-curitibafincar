@@ -7,7 +7,7 @@ import { withRouter } from 'react-router';
 const Home = ({
     history
 }) => {
-    const [ inputLogin, setInputLogin ] = useState({});
+    const [inputLogin, setInputLogin] = useState({});
 
     const { verifyAccount, user } = useContext(AuthContext);
 

@@ -1,5 +1,5 @@
 // import the model
-import Company from "../models/Company";
+import Companie from "../models/Companie";
 import Contract from "../models/Contract";
 import User from "../models/User";
 
@@ -20,7 +20,7 @@ class ContractCotroller {
       ],
       include: [
         {
-          model: Company,
+          model: Companie,
           as: 'companies'
         },
       ],
@@ -52,7 +52,7 @@ class ContractCotroller {
         ],
         include: [
           {
-            model: Company,
+            model: Companie,
             as: 'companies'
           },
         ],
