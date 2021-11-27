@@ -7,17 +7,17 @@ const getCompanies = async () => {
 }
 
 const getCompanyById = async (id) => {
-    return await axios.get(`${HOST_URL}/companies/${id}`);
+    return await axios.get(`${HOST_URL}/company/${id}`);
 }
 
 const postCompanyById = async () => {
-    return await axios.post(`${HOST_URL}/companies`);
+    return await axios.post(`${HOST_URL}/company`);
 }
 
 const putCompanyById = async (id) => {
-    return await axios.pus(`${HOST_URL}/companies${id}`);
+    return await axios.pus(`${HOST_URL}/company/${id}`);
 }
 
 const deleteCompanyById = async (id) => {
-    return await axios.delete(`${HOST_URL}/companies ${id}`);
+    return await axios.delete(`${HOST_URL}/company/${id}`);
 }
