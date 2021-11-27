@@ -15,7 +15,7 @@ const postUserById = async () => {
 }
 
 const putUserById = async (id) => {
-    return await axios.pus(`${HOST_URL}/user${id}`);
+    return await axios.put(`${HOST_URL}/user${id}`);
 }
 
 const deleteUserById = async (id) => {

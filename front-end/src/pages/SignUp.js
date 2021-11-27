@@ -5,6 +5,7 @@ import { Input, Button } from '../components';
 export default function Home(){
 
   const [name, setName] = useState('');
+  const [lastName, setLastname] = useState('');
   const [cpf, setCpf] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -12,7 +13,7 @@ export default function Home(){
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log(name, cpf, email, password);
+    console.log(name, lastName, cpf, email, password);
     
   }
 
@@ -20,12 +21,19 @@ export default function Home(){
         <div className='show-box radius-form'>
           <h1 className="title-page">Cadastrar Usuário</h1>
             <form onSubmit={handleSubmit} className='text-size'>
-              <p>Nome Completo: *</p>
+              <p>Nome: *</p>
                 <Input
                   value={name}
                   onChange={(e) => {setName(e.target.value)}}
                   type="text"
                   placeHolder="Curitiba"
+                />
+              <p>Sobrenome: *</p>
+                <Input
+                  value={lastName}
+                  onChange={(e) => {setLastname(e.target.value)}}
+                  type="text"
+                  placeHolder="FinCar"
                 />
               <p>C.P.F: *</p>
                 <Input
