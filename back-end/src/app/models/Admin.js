@@ -4,11 +4,33 @@ class Admin extends Model {
   static init(sequelize) {
     super.init(
       {
-        user_common: Sequelize.STRING(100),
-        name: Sequelize.STRING(100),
-        cpf: Sequelize.DECIMAL(15),
-        email: Sequelize.STRING(100),
-        password: Sequelize.STRING(100),
+        id: {
+          type: Sequelize.INTEGER,
+          allowNull: false,
+          autoIncrement: true,
+          primaryKey: true,
+        },
+        type_user: {
+          type: Sequelize.STRING,
+          allowNull: false,
+          defaultValue: "adm",
+        },
+        name: {
+          type: Sequelize.STRING(100),
+          allowNull: false,
+        },
+        cpf: {
+          type: Sequelize.INTEGER,
+          allowNull: false,
+        },
+        email: {
+          type: Sequelize.STRING(20),
+          allowNull: true,
+        },
+        password: {
+          type: Sequelize.STRING(100),
+          allowNull: true,
+        },
       },
       {
         sequelize,

@@ -9,7 +9,7 @@ class AdminController {
 
   async index(req, res) {
     const adm = await Admin.findAll();
-    return res.json(usadmeadmrs);
+    return res.json(adm);
   }
 
   async update(req, res) {
