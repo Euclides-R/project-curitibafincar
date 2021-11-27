@@ -11,7 +11,7 @@ const getCompanyById = async (id) => {
 }
 
 const postCompanyById = async () => {
-    return await axios.post(`${HOST_URL}/companies`);
+    return await axios.post(`${HOST_URL}/companie`);
 }
 
 const putCompanyById = async (id) => {
