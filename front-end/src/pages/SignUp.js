@@ -12,7 +12,7 @@ export default function Home(){
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log(name, lastName, cpf, email, password);
+    console.log(name, cpf, email, password);
     
   }
 

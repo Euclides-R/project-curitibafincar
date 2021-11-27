@@ -36,7 +36,7 @@ class Contract extends Model {
           foreignKey: 'users_id',
           as: 'users',
       });
-      this.belongsTo(models.Companie, {
+      this.belongsTo(models.Company, {
           foreignKey: 'companie_id',
           as: 'companies',
       });

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import CompanieController from "./app/controller/CompanieController";
+import CompanyController from "./app/controller/CompanyController";
 import ContractController from "./app/controller/ContractController";
 import UserController from "./app/controller/UserController";
 const routes = Router();
@@ -10,11 +10,11 @@ routes.post('/contract', ContractController.store);
 routes.put('/contract/:id', ContractController.update);
 routes.delete('/contract/:id', ContractController.delete);
 
-routes.get('/companies', CompanieController.index);
-routes.get('/companies/:id', CompanieController.show);
-routes.post('/companies', CompanieController.store);
-routes.put('/companies/:id', CompanieController.update);
-routes.delete('/companies/:id', CompanieController.delete);
+routes.get('/companies', CompanyController.index);
+routes.get('/companies/:id', CompanyController.show);
+routes.post('/companies', CompanyController.store);
+routes.put('/companies/:id', CompanyController.update);
+routes.delete('/companies/:id', CompanyController.delete);
 
 routes.get('/user', UserController.index);
 routes.get('/user/:id', UserController.show);
