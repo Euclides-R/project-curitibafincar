@@ -1,31 +1,36 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../hooks/auth';
+import { withRouter } from 'react-router';
 
 import { Input, Button } from '../components';
 
-export default function Home() {
+const Home = ({
+    history
+}) => {
     const [inputLogin, setInputLogin] = useState({});
 
     const { verifyAccount, user } = useContext(AuthContext);
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
 
         try {
-            verifyAccount(inputLogin);
+            await verifyAccount(inputLogin);
             if (user.password) {
                 renderpage()
             }
         } catch (error) {
-            alert(error);
+            console.log(error);
+            alert('USUÁRIO OU SENHA NÃO ENCONTRADOS')
         }
     }
 
     function renderpage() {
-        if (user.type === 'user') {
-            return 
-        } else if (user.type === 'admin') {
-            return 
+        
+        if (user.type_user === 'user') {
+            return history.push('/simulation');
+        } else if (user.type_user === 'adm') {
+            return history.push('/adminhome');
         }
     }
 
@@ -69,3 +74,5 @@ export default function Home() {
         </div>
     );
 };
+
+export default withRouter(Home);

@@ -2,8 +2,10 @@ const axios = require('axios');
 
 const HOST_URL = 'http://localhost:3333';
 
-const getUsers = async () => {
-    return await axios.get(`${HOST_URL}/user`);
+const getUser = async (data) => {
+    return await axios.post(`${HOST_URL}/userlogin/`, {
+        email: data.email, password: data.password
+    });
 }
 
 const getUserById = async (id) => {
@@ -21,3 +23,5 @@ const putUserById = async (id) => {
 const deleteUserById = async (id) => {
     return await axios.delete(`${HOST_URL}/user ${id}`);
 }
+
+    export default function UserService() { return {getUser} };

@@ -12,6 +12,20 @@ class UserController {
     return res.json(users);
   }
 
+  async login(req, res) {
+    console.log('funcionou');
+    const user = await User.findOne({ where: {
+      email: req.body.email,
+      password: req.body.password
+    }});
+    if (!user) {
+      return res.status(404).json({
+        error: "Não encontrado"
+      })
+    }
+    return res.json(user)
+  }
+
   async update(req, res) {
     let user = await User.findByPk(req.params.id);
     user = await user.update(req.body);

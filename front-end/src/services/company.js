@@ -21,3 +21,7 @@ const putCompanyById = async (id) => {
 const deleteCompanyById = async (id) => {
     return await axios.delete(`${HOST_URL}/company/${id}`);
 }
+
+export default function Companies() {
+    return getCompanies()
+}

@@ -4,16 +4,17 @@ import { Button, Input } from '../../components';
 
 export default function NewFin() {
   
-  const [name, setName] = useState('');
-  const [corporateName, setCorporatename] = useState('');
-  const [cnpj, setCnpj] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [ name, setName ] = useState('');
+  const [ reasonSocial, setReasonSocial ] = useState('');
+  const [ cnpj, setCnpj ] = useState('');
+  const [ email, setEmail ] = useState('');
+  const [ interestRate, setInterestRate ] = useState('');
+  const [ address, setAddress ] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log(name, corporateName, cnpj, email, password);
+    console.log(name, reasonSocial, address, cnpj, interestRate);
 
   }
 
@@ -28,19 +29,26 @@ export default function NewFin() {
           type="text"
           placeHolder="Curitiba"
         />
-        <p>Razão Social: *</p>
+        <p>Razão Social *</p>
         <Input
-          value={corporateName}
-          onChange={(e) => { setCorporatename(e.target.value) }}
+          value={reasonSocial}
+          onChange={(e) => { setReasonSocial(e.target.value) }}
           type="text"
-          placeHolder="Curitiba"
+          placeHolder="Financiodora de Veículos"
         />
-        <p>C.N.P.J: *</p>
+        <p>CNPJ: *</p>
         <Input
           value={cnpj}
           onChange={(e) => { setCnpj(e.target.value) }}
           type="text"
-          placeHolder="111.222.333-44"
+          placeHolder="11.111.111/0001-11"
+        />
+        <p>Endereço SEDE: *</p>
+        <Input
+          value={address}
+          onChange={(e) => { setAddress(e.target.value) }}
+          type="text"
+          placeHolder="R. XV de Novembro, 2120"
         />
         <p>Email: *</p>
         <Input
@@ -49,12 +57,12 @@ export default function NewFin() {
           type="text"
           placeHolder="curitibafincar@financas.com.br"
         />
-        <p>Senha: *</p>
+        <p>Taxa de Juros: *</p>
         <Input
-          value={password}
-          onChange={(e) => { setPassword(e.target.value) }}
+          value={interestRate}
+          onChange={(e) => { setInterestRate(e.target.value) }}
           type="password"
-          placeHolder="Digite sua senha"
+          placeHolder="5%"
         />
         <Button className="btn-signup radius-form">Cadastrar</Button>
       </form>

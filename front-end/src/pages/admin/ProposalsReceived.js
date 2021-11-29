@@ -71,7 +71,6 @@ export default function ProposalsReceived() {
             if (element.id === i) {
                 element.status = typeOfClick === 'active' ? true : false;
             }
-            console.log(element);
             return element;
         })
         setStatusAndIdContract(newElement)

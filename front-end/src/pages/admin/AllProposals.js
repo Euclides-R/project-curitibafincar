@@ -15,7 +15,6 @@ export default function AllProposals() {
             return increment;
         }, [])
         setStatus(reducer);
-        console.log(status);
     }, [setStatus]);
 
 

@@ -24,6 +24,7 @@ routes.put('/companies/:id', CompanyController.update);
 routes.delete('/companies/:id', CompanyController.delete);
 
 routes.get('/user', UserController.index);
+routes.post('/userlogin', UserController.login);
 routes.get('/user/:id', UserController.show);
 routes.post('/user', UserController.store);
 routes.put('/user/:id', UserController.update);

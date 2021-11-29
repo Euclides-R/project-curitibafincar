@@ -1,6 +1,7 @@
 import React from 'react';
 import { createContext, useState } from 'react';
 import accs from './acc';
+import { UserService } from '../services';
 
 export const AuthContext = createContext({
     
@@ -14,16 +15,17 @@ export const AuthProvider = (
 
     const [user, setUser] = useState({});
 
-    function verifyAccount({
+    async function verifyAccount({
         email,
         password
     }) {
-        const currentAccount = accs.find(acc => acc.owner === email && acc.password === password);
-
-        if (!currentAccount) {
-            throw new Error('Usuário não encontrato');
-        }
-        setUser(currentAccount);
+       try {
+        const currentAccount = await UserService().getUser({ email, password });
+        console.log(currentAccount.data);
+        setUser(currentAccount.data);
+       } catch (error) {
+           throw new Error(error);
+       }
     }
 
     return (
