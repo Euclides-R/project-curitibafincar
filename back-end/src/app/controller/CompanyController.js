@@ -3,8 +3,13 @@ import Company from "../models/Company";
 
 class CompanyController {
   async store(req, res) {
-    const companie = await Company.create(req.body);
-    return res.json(companie);
+    try {
+      const company = await Company.create(req.body);
+      return res.json(company);
+    } catch (error) {
+      console.log(error);
+      return res.status(402).json({error: "erro de inserção"});
+    }
   }
 
   async index(req, res) {
@@ -13,20 +18,20 @@ class CompanyController {
   }
 
   async update(req, res) {
-    let companie = await Company.findByPk(req.params.id);
-    companie = await companie.update(req.body);
-    return res.json(companie)
+    let company = await Company.findByPk(req.params.id);
+    company = await company.update(req.body);
+    return res.json(company)
   }
 
   async delete(req, res) {
-    let companie = await Company.findByPk(req.params.id);
-    companie = await companie.destroy(req.body);
-    return res.json(companie)
+    let company = await Company.findByPk(req.params.id);
+    company = await company.destroy(req.body);
+    return res.json(company)
   }
 
   async show(req, res) {
-    let companie = await Company.findByPk(req.params.id);
-    return res.json(companie)
+    let company = await Company.findByPk(req.params.id);
+    return res.json(company)
   }
 }
 

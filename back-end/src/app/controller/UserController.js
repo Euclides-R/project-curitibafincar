@@ -3,8 +3,12 @@ import User from "../models/User";
 
 class UserController {
   async store(req, res) {
-    const user = await User.create(req.body);
-    return res.json(user)
+    try {
+      const user = await User.create(req.body);
+      return res.json(user);
+    } catch (error) {
+      return res.status(404).json({error: "erro de inserção"});
+    }
   }
 
   async index(req, res) {

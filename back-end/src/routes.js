@@ -13,20 +13,20 @@ routes.delete('/admin/:id', AdminController.delete);
 
 routes.get('/contract', ContractController.index);
 routes.get('/contract/:id', ContractController.show);
-routes.post('/contract', ContractController.store);
+routes.post('/newcontract', ContractController.store);
 routes.put('/contract/:id', ContractController.update);
 routes.delete('/contract/:id', ContractController.delete);
 
 routes.get('/companies', CompanyController.index);
 routes.get('/companies/:id', CompanyController.show);
-routes.post('/companies', CompanyController.store);
+routes.post('/registercompany', CompanyController.store);
 routes.put('/companies/:id', CompanyController.update);
 routes.delete('/companies/:id', CompanyController.delete);
 
 routes.get('/user', UserController.index);
 routes.post('/userlogin', UserController.login);
 routes.get('/user/:id', UserController.show);
-routes.post('/user', UserController.store);
+routes.post('/registeruser', UserController.store);
 routes.put('/user/:id', UserController.update);
 routes.delete('/user/:id', UserController.delete);
 

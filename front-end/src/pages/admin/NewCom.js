@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { Button, Input } from '../../components';
+import { CompanyService } from '../../services';
 
 export default function NewFin() {
   
@@ -11,11 +12,21 @@ export default function NewFin() {
   const [ interestRate, setInterestRate ] = useState('');
   const [ address, setAddress ] = useState('');
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+    if (!name || !reasonSocial || !cnpj || !email || !interestRate || !address) {
+      alert("TODOS OS CAMPOS SÃO OBRIGATÓRIOS");
+      return
+    }
 
-    console.log(name, reasonSocial, address, cnpj, interestRate);
-
+    try {
+      await CompanyService().registerCompany({ name, reason_social: 
+        reasonSocial, cnpj, email, interest_rate: interestRate, address});
+      alert("CADASTRO CRIADO")
+    } catch (error) {
+      alert("CADASTRO NÃO INSERIDO, ERRO");
+      console.log(error);  
+    }
   }
 
   return (
@@ -61,7 +72,7 @@ export default function NewFin() {
         <Input
           value={interestRate}
           onChange={(e) => { setInterestRate(e.target.value) }}
-          type="password"
+          type="text"
           placeHolder="5%"
         />
         <Button className="btn-signup radius-form">Cadastrar</Button>

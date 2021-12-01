@@ -21,6 +21,11 @@ class Contract extends Model {
           type: Sequelize.DATE,
           allowNull: false,
         },
+        status: Sequelize.STRING(20),
+        value: {
+          type: Sequelize.DECIMAL,
+          allowNull: false,
+        }
       },
       {
         sequelize,
@@ -33,11 +38,11 @@ class Contract extends Model {
 
   static associate(models) {
       this.belongsTo(models.User, {
-          foreignKey: 'users_id',
+          foreignKey: 'user_id',
           as: 'users',
       });
       this.belongsTo(models.Company, {
-          foreignKey: 'companie_id',
+          foreignKey: 'company_id',
           as: 'companies',
       });
   }

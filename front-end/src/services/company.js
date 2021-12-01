@@ -10,8 +10,11 @@ const getCompanyById = async (id) => {
     return await axios.get(`${HOST_URL}/company/${id}`);
 }
 
-const postCompanyById = async () => {
-    return await axios.post(`${HOST_URL}/company`);
+const registerCompany = async (data) => {
+    const {name, reason_social, cnpj, email, interest_rate, address} = data;
+    return await axios.post(`${HOST_URL}/registercompany`, {
+        name, reason_social, cnpj, email, interest_rate, address
+    });
 }
 
 const putCompanyById = async (id) => {
@@ -22,6 +25,6 @@ const deleteCompanyById = async (id) => {
     return await axios.delete(`${HOST_URL}/company/${id}`);
 }
 
-export default function Companies() {
-    return getCompanies()
+export default function CompanyService() {
+    return {getCompanies, registerCompany}
 }

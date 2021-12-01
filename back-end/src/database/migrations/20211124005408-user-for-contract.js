@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.addColumn("contracts", "users_id", {
+  up: (queryInterface, Sequelize) => queryInterface.addColumn("contracts", "user_id", {
     type: Sequelize.INTEGER,
     references: { model: 'users', key: 'id'},
     onUpdate: 'CASCADE',
@@ -9,5 +9,5 @@ module.exports = {
     allowNull:true
   }),
  
-  down: (queryInterface)=> queryInterface.removeColumn("contracts", "users_id")
+  down: (queryInterface)=> queryInterface.removeColumn("contracts", "user_id")
 };

@@ -10,8 +10,11 @@ const getContractById = async (id) => {
     return await axios.get(`${HOST_URL}/contract/${id}`);
 }
 
-const postContractById = async () => {
-    return await axios.post(`${HOST_URL}/contract`);
+const addNewContract = async (data) => {
+    const { user_id, company_id, type_contract, value, amount_times } = data
+    return await axios.post(`${HOST_URL}/newcontract`, {
+        user_id, company_id, type_contract, value, amount_times
+    });
 }
 
 const putContractById = async (id) => {
@@ -20,4 +23,8 @@ const putContractById = async (id) => {
 
 const deleteContractById = async (id) => {
     return await axios.delete(`${HOST_URL}/contract/${id}`);
+}
+
+export default function ContractService() {
+    return {addNewContract}
 }

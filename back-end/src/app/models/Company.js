@@ -4,7 +4,11 @@ class Company extends Model {
   static init(sequelize) {
     super.init(
       {
-        name: Sequelize.STRING(100),
+        name: {
+          type: Sequelize.STRING(100),
+          allowNull: false,
+          primaryKey: true,
+        },
         reason_social: Sequelize.STRING(100),
         cnpj: Sequelize.DECIMAL(100),
         email: Sequelize.STRING(100),

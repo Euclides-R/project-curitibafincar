@@ -3,11 +3,28 @@ import Sequelize, { Model } from "sequelize";
 class User extends Model {
   static init(sequelize) {
     super.init({
-      type_user: Sequelize.STRING(100),
-      name: Sequelize.STRING(100),
-      cpf: Sequelize.DECIMAL(15),
-      email: Sequelize.STRING(100),
-      password: Sequelize.STRING(100)
+      type_user: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+        defaultValue: "user",
+      },
+      name: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+      },
+      cpf: {
+        type: Sequelize.BIGINT,
+        allowNull: false,
+        primaryKey: true,
+      },
+      email: {
+        type: Sequelize.STRING(100),
+        allowNull: true,
+      },
+      password: {
+        type: Sequelize.STRING(100),
+        allowNull: true,
+      },
     },
     {
       sequelize,

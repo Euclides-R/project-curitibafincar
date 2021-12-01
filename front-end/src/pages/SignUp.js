@@ -1,39 +1,41 @@
 import React, { useState } from 'react';
+import { UserService } from '../services';
 
 import { Input, Button } from '../components';
 
 export default function Home(){
 
   const [name, setName] = useState('');
-  const [lastName, setLastname] = useState('');
   const [cpf, setCpf] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+    if (!name || !cpf || !email || !password) {
+      alert("TODOS OS CAMPOS SÃO OBRIGATÓRIOS");
+      return
+    }
 
-    console.log(name, lastName, cpf, email, password);
-    
+    try {
+      await UserService().registerUser({ name, cpf, email, password});
+      alert("CADASTRO CRIADO")
+    } catch (error) {
+      alert("CADASTRO NÃO INSERIDO, ERRO");
+      console.log(error);  
+    }    
   }
 
     return(
         <div className='show-box radius-form'>
           <h1 className="title-page">Cadastrar Usuário</h1>
             <form onSubmit={handleSubmit} className='text-size'>
-              <p>Nome: *</p>
+              <p>Nome Completo: *</p>
                 <Input
                   value={name}
                   onChange={(e) => {setName(e.target.value)}}
                   type="text"
                   placeHolder="Curitiba"
-                />
-              <p>Sobrenome: *</p>
-                <Input
-                  value={lastName}
-                  onChange={(e) => {setLastname(e.target.value)}}
-                  type="text"
-                  placeHolder="FinCar"
                 />
               <p>C.P.F: *</p>
                 <Input

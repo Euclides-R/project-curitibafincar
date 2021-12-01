@@ -1,2 +1,15 @@
 .select {
+    background: none;
+    border: none;
+    border: 1px solid var(--gray-text);
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    outline: none;
+    width: 100%;
+}
+
+.select.select-primary {
+    border-radius: 10px 0px;
 }
