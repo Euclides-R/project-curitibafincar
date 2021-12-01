@@ -18,7 +18,7 @@ export default function Home(){
     }
 
     try {
-      await UserService().registerUser({ name, cpf, email, password});
+      await UserService().registerUser({ name, cpf, email, password });
       alert("CADASTRO CRIADO")
     } catch (error) {
       alert("CADASTRO NÃO INSERIDO, ERRO");

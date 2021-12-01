@@ -4,6 +4,12 @@ class Company extends Model {
   static init(sequelize) {
     super.init(
       {
+        id: {
+          type: Sequelize.INTEGER,
+          allowNull: false,
+          autoIncrement: true,
+          primaryKey: true,
+        },
         name: {
           type: Sequelize.STRING(100),
           allowNull: false,

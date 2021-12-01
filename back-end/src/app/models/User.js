@@ -3,6 +3,12 @@ import Sequelize, { Model } from "sequelize";
 class User extends Model {
   static init(sequelize) {
     super.init({
+      id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+      },
       type_user: {
         type: Sequelize.STRING(100),
         allowNull: false,

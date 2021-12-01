@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from 'react';
+import { ContractService } from '../../services';
 
 import { Button } from '../../components';
 import contracts from '../../hooks/contracts';
 
 export default function AllProposals() {
 
-    const [status, setStatus] = useState([{ id: 0, status: false }]);
-
+    const [data, setData] = useState([]);
     useEffect(() => {
-        const reducer = contracts.reduce((increment, cont) => {
-            increment.push({
-                id: cont.id, status: cont.status,
-            })
-            return increment;
-        }, [])
-        setStatus(reducer);
-    }, [setStatus]);
+        async function execute() {
+            try {
+                const {data} = await ContractService().getContracts();
+                console.log(data);
+                setData(data);
+            } catch (error) {
+                console.log(error);
+            }
+        } 
+        execute();
+    }, [setData])
 
-
-    if (!status.length) return null;
+    if (!data.length) {
+        return null;
+    }
 
     return (
         <div className="show-box radius-form">
@@ -38,15 +42,15 @@ export default function AllProposals() {
                         </tr>
                     </thead>
                     <tbody>
-                        {contracts.map((cont, i) => {
+                        {data.map((cont, i) => {
                             return (
                                 <tr key={cont.id}>
-                                    <td>{cont.name}</td>
-                                    <td>{cont.amount}</td>
-                                    <td>{cont.companie}</td>
+                                    <td>{cont.users_id}</td>
+                                    <td>{cont.amount_times}</td>
+                                    <td>{cont.company_id}</td>
                                     <td>{cont.entry_date}</td>
                                     <td>{cont.installments_date}</td>
-                                    <td>{cont.type}</td>
+                                    <td>{cont.type_contract}</td>
                                     <td>{cont.value}</td>
                                     <td>{cont.status}</td>
                                 </tr>

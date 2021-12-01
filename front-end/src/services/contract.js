@@ -18,7 +18,7 @@ const addNewContract = async (data) => {
 }
 
 const putContractById = async (id) => {
-    return await axios.pus(`${HOST_URL}/contract/${id}`);
+    return await axios.put(`${HOST_URL}/contract/${id}`);
 }
 
 const deleteContractById = async (id) => {
@@ -26,5 +26,5 @@ const deleteContractById = async (id) => {
 }
 
 export default function ContractService() {
-    return {addNewContract}
+    return {getContracts, addNewContract}
 }

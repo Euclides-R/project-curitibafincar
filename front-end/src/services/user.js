@@ -23,8 +23,13 @@ const registerUser = async (data) => {
   });
 };
 
-const putUserById = async (id) => {
-  return await axios.put(`${HOST_URL}/user${id}`);
+const resetPasswordUser = async (data) => {
+  const { cpf, password, newPassword } = data;
+  return await axios.put(`${HOST_URL}/resetpassworduser`, {
+    cpf,
+    password,
+    newPassword
+  });
 };
 
 const deleteUserById = async (id) => {
@@ -32,5 +37,5 @@ const deleteUserById = async (id) => {
 };
 
 export default function UserService() {
-  return { getUser, registerUser };
+  return { getUser, registerUser, resetPasswordUser };
 }

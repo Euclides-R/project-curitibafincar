@@ -1,15 +1,17 @@
 import React, { useState, useEffect, useContext } from "react";
 
 import { Input, Button, Select } from "../components";
-import { AuthContext  } from "../hooks/auth";
+import { AuthContext } from "../hooks/auth";
 import { ContractService } from "../services";
 import CompanyService from "../services/Company";
 
 export default function Home() {
   // const [cpf, setCpf] = useState();
-  const {user: {cpf, id}} = useContext(AuthContext);
+  const {
+    user
+  } = useContext(AuthContext);
 
-  const [financial, setFinancial] = useState('');
+  const [financial, setFinancial] = useState("");
   const [typeContract, setTypeContract] = useState("");
   const [value, setValue] = useState();
   const [parcel, setParcel] = useState("");
@@ -33,14 +35,21 @@ export default function Home() {
     //   alert("TODOS OS CAMPOS SÃO OBRIGATÓRIOS");
     //   return
     // }
+    console.log(financial);
 
     try {
-      const company = data.filter((company) => company.name === financial)
-      await ContractService().addNewContract({ user_id: id, company_id: company.id, type_contract: typeContract, value, amount_times: parcel });
-      alert("CADASTRO CRIADO")
+      const company = data.find((company) => company.name === financial);
+      await ContractService().addNewContract({
+        user_id: user.id,
+        company_id: company.id,
+        type_contract: typeContract,
+        value,
+        amount_times: parcel,
+      });
+      alert("SIMULAÇÃO SOLICITADA, ASSIM QUE APROVADA IRÁ RECEBER UM EMAIL");
     } catch (error) {
-      alert("CADASTRO NÃO INSERIDO, ERRO");
-      console.log(error);  
+      alert("ERRO NA SOLICITAÇÃO DE SIMULAÇÃO");
+      console.log(error);
     }
   }
 
@@ -49,21 +58,16 @@ export default function Home() {
       <h1 className="title-page"> Simulação de Financiamento </h1>
       <form onSubmit={handleSubmit} className="simulation-box text-size">
         <p>C.P.F: *</p>
-        <Input
-          value={cpf}
-          type="text"
-          placeHolder={cpf}
-          disabled
-        />
+        <Input value={user.cpf} type="text" placeHolder={user.cpf} disabled />
         <p>Financeira: *</p>
         <Select
           value={financial}
           onChange={(e) => {
-            setFinancial(e.target.value);
+            setFinancial(e.target.value)
           }}
         >
           {data.map((cont, i) => {
-            return (<option value={cont.name}>{cont.name}</option>);
+            return <option value={cont.name}>{cont.name}</option>;
           })}
         </Select>
         <p>Tipo de simulação: *</p>

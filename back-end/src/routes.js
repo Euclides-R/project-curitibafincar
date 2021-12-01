@@ -11,7 +11,7 @@ routes.post('/admin', AdminController.store);
 routes.put('/admin/:id', AdminController.update);
 routes.delete('/admin/:id', AdminController.delete);
 
-routes.get('/contract', ContractController.index);
+routes.get('/contracts', ContractController.index);
 routes.get('/contract/:id', ContractController.show);
 routes.post('/newcontract', ContractController.store);
 routes.put('/contract/:id', ContractController.update);
@@ -27,7 +27,7 @@ routes.get('/user', UserController.index);
 routes.post('/userlogin', UserController.login);
 routes.get('/user/:id', UserController.show);
 routes.post('/registeruser', UserController.store);
-routes.put('/user/:id', UserController.update);
+routes.put('/resetpassworduser/', UserController.update);
 routes.delete('/user/:id', UserController.delete);
 
 export default routes;

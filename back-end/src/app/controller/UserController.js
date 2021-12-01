@@ -31,8 +31,30 @@ class UserController {
   }
 
   async update(req, res) {
-    let user = await User.findByPk(req.params.id);
-    user = await user.update(req.body);
+    let user = await User.findOne({
+      where: {
+        cpf: req.body.cpf,
+      }
+    });
+    if (!user) {
+      return res.status(404).json(
+        {error: "CPF NÃO LOCALIZADO"}
+      )
+    }
+    if (user.password !== req.body.password) {
+      console.log("Senha antiga não existe");
+      return res.status(404).json(
+        {error: "SENHA ANTIGA NÃO CONFERE"}
+        )      
+    }
+    console.log("ALTEROU SUA SENHA");
+    user = await User.update({
+      password: req.body.newPassword
+    }, {
+      where: {
+        cpf: req.body.cpf
+      }
+    })
     return res.json(user)
   }
 

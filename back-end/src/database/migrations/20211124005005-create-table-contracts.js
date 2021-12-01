@@ -21,11 +21,13 @@ module.exports = {
       entry_date: {
         type: Sequelize.DATE,
         allowNull: false,
+        defaultValue: new Date(),
         // defaultValue: moment().add("days", 30).format("DD/MM/YYYY"),
       },
       installments_date: {
         type: Sequelize.DATE,
         allowNull: false,
+        defaultValue: new Date(),
         // defaultValue: moment().add("days", 60).format("DD/MM/YYYY"),
       },
       status: Sequelize.STRING(20),
