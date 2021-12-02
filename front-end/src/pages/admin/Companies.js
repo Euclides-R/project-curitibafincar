@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import { Button } from 'components';
+import { Button } from '../../components';
 
-import CompanyService from 'services';
+import { CompanyService } from '../../services';
 
 export default function Companies() {
   const [companies, setCompanies] = useState([]);
@@ -46,7 +46,7 @@ export default function Companies() {
               })}
             </tbody>
           </table>
-          <Button className="btn-position radius-form" >Atualizar Lista</Button>
+          <Button className="btn-position radius-form">Atualizar Lista</Button>
         </div>
         <Button className="radius-form" kind="second" url="/AdminHome">Voltar</Button>
     </div>

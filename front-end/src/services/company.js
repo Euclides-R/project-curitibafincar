@@ -1,5 +1,7 @@
 const axios = require('axios');
 
+const LOCAL_HOST = "http://localhost:3333";
+
 const getCompanies = async () => {
   return await axios.get(`${process.env.API_HOST}/companies`);
 };
@@ -20,7 +22,7 @@ const deleteCompanyById = async (id) => {
   return await axios.delete(`${process.env.API_HOST}/company/${id}`);
 };
 
-export {
+export default {
   getCompanies,
   getCompanyById,
   registerCompany,

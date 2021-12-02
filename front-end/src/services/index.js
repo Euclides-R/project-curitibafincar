@@ -1,3 +1,3 @@
-export { default as CompanyService } from './Company';
-export { default as ContractService } from './Contract';
-export { default as UserService } from './User';
+export { default as CompanyService } from './company';
+export { default as ContractService } from './contract';
+export { default as UserService } from './user';

@@ -1,7 +1,9 @@
 const axios = require('axios');
 
+const LOCAL_HOST = "http://localhost:3333";
+
 const getContracts = async () => {
-    return await axios.get(`${process.env.API_HOST}/contracts`);
+    return await axios.get(`${LOCAL_HOST}/contracts`);
 }
 
 const getContractById = async (id) => {
@@ -23,6 +25,7 @@ const deleteContractById = async (id) => {
     return await axios.delete(`${process.env.API_HOST}/contract/${id}`);
 }
 
-export default function ContractService() {
-    return {getContracts, addNewContract}
+export default {
+    getContracts,
+    addNewContract
 }

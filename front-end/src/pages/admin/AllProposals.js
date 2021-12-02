@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { ContractService } from '../../services';
 
 import { Button } from '../../components';
-import contracts from '../../hooks/contracts';
 
 export default function AllProposals() {
 
@@ -10,7 +9,7 @@ export default function AllProposals() {
     useEffect(() => {
         async function execute() {
             try {
-                const {data} = await ContractService().getContracts();
+                const {data} = await ContractService.getContracts();
                 console.log(data);
                 setData(data);
             } catch (error) {

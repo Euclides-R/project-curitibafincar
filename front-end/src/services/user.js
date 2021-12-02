@@ -20,7 +20,7 @@ const deleteUserById = async (id) => {
   return await axios.delete(`${process.env.API_HOST}/user ${id}`);
 };
 
-export {
+export default {
   getUser,
   getUserById,
   registerUser,

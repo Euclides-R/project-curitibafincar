@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
+
 import { Button, Input } from '../../components';
 import { CompanyService } from '../../services';
 
@@ -21,7 +22,7 @@ export default function NewCom() {
         requestStatus = 'error';
       }
 
-      if (requestStatus === 'success') history.push('/companies');
+      // if (requestStatus === 'success') history.push('/companies');
     }
   };
 
@@ -35,7 +36,7 @@ export default function NewCom() {
         <Input
           ref={register(requiredMessage)}
           name="name"
-          errorMessage={errorMessageFor('name', errors)}
+          // errorMessage={errorMessageFor('name', errors)}
           type="text"
           placeHolder="Curitiba"
         />
@@ -43,7 +44,7 @@ export default function NewCom() {
         <Input
           ref={register(requiredMessage)}
           name="reason_social"
-          errorMessage={errorMessageFor('reason_social', errors)}
+          // errorMessage={errorMessageFor('reason_social', errors)}
           type="text"
           placeHolder="Financiodora de Veículos"
         />
@@ -51,7 +52,7 @@ export default function NewCom() {
         <Input
           ref={register(requiredMessage)}
           name="cnpj"
-          errorMessage={errorMessageFor('cnpj', errors)}
+          // errorMessage={errorMessageFor('cnpj', errors)}
           type="text"
           placeHolder="11.111.111/0001-11"
         />
@@ -59,7 +60,7 @@ export default function NewCom() {
         <Input
           ref={register(requiredMessage)}
           name="address"
-          errorMessage={errorMessageFor('address', errors)}
+          // errorMessage={errorMessageFor('address', errors)}
           type="text"
           placeHolder="R. XV de Novembro, 2120"
         />
@@ -67,7 +68,7 @@ export default function NewCom() {
         <Input
           ref={register(requiredMessage)}
           name="email"
-          errorMessage={errorMessageFor('email', errors)}
+          // errorMessage={errorMessageFor('email', errors)}
           type="text"
           placeHolder="example@email.com"
         />
@@ -75,7 +76,7 @@ export default function NewCom() {
         <Input
           ref={register(requiredMessage)}
           name="interest_rate"
-          errorMessage={errorMessageFor('interest_rate', errors)}
+          // errorMessage={errorMessageFor('interest_rate', errors)}
           type="text"
           placeHolder="0%"
         />

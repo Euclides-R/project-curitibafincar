@@ -7,24 +7,27 @@ import { Input, Button } from '../components';
 const Home = ({
     history
 }) => {
-    const [inputLogin, setInputLogin] = useState({});
+    const {
+        register, handleSubmit, errors, formState,
+      } = useForm();
 
-    const { verifyAccount, user } = useContext(AuthContext);
-
-    async function handleSubmit(e) {
-        e.preventDefault();
-
-        try {
-            await verifyAccount(inputLogin);
-            if (user.password) {
-                renderpage()
-            }
-        } catch (error) {
-            console.log(error);
-            alert('USUÁRIO OU SENHA NÃO ENCONTRADOS')
+      const handleOnSubmit = async (payload, e) => {
+        e.persist();
+    
+        if (!formState.isSubmitting) {
+          let requestStatus = 'success';
+          try {
+            const { data } = await CompanyService.registerCompany(payload);
+            console.log(data);
+          } catch (error) {
+            requestStatus = 'error';
+          }
+    
+          if (requestStatus === 'success') renderpage();
         }
-    }
+      };
 
+    
     function renderpage() {
         
         if (user.type_user === 'user') {
@@ -37,7 +40,7 @@ const Home = ({
     return (
         <div className='show-box radius-form'>
             <h1 className='title-page'> CuritibaFinCar </h1>
-            <form onSubmit={handleSubmit} className="text-size">
+            <form onSubmit={handleSubmit(handleOnSubmit)} className="text-size">
                 <p>Email:</p>
                 <Input
                     name='email'
