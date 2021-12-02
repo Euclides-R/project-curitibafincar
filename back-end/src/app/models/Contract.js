@@ -39,11 +39,11 @@ class Contract extends Model {
   static associate(models) {
       this.belongsTo(models.User, {
           foreignKey: 'user_id',
-          as: 'users',
+          as: 'user',
       });
       this.belongsTo(models.Company, {
           foreignKey: 'company_id',
-          as: 'companies',
+          as: 'company',
       });
   }
 

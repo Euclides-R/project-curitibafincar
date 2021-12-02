@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '../../components';
 import companies from '../../hooks/companies';
 
-import CompanyService from '../../services/Company';
+import { CompanyService } from '../../services';
 
 export default function Companies() {
 
@@ -12,7 +12,7 @@ export default function Companies() {
         async function execute() {
             const {data} = await CompanyService();
             setData(data);
-        } 
+        }
         execute();
     }, [setData])
 

@@ -2,10 +2,10 @@
 import Company from "../models/Company";
 import Contract from "../models/Contract";
 import User from "../models/User";
+
 let moment = require('moment');
 let entry = moment().add(30, "days").utc();
 let installments = moment().add(60, "days").utc();
-
 
 class ContractCotroller {
   async store(req, res) {
@@ -31,8 +31,20 @@ class ContractCotroller {
         "type_contract",
         "amount_times",
         "entry_date",
+        "value",
+        "status",
         "installments_date",
       ],
+      include: [
+        {
+          model: User,
+          as: 'user'
+        },
+        {
+          model: Company,
+          as: 'company'
+        }
+      ]
     });
     return res.json(contracts);
   }
@@ -56,6 +68,8 @@ class ContractCotroller {
         "type_contract",
         "amount_times",
         "entry_date",
+        "value",
+        "status",
         "installments_date",
       ],
       include: [

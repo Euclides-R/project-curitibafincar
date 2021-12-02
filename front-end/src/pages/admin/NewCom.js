@@ -4,7 +4,7 @@ import { Button, Input } from '../../components';
 import { CompanyService } from '../../services';
 
 export default function NewFin() {
-  
+
   const [ name, setName ] = useState('');
   const [ reasonSocial, setReasonSocial ] = useState('');
   const [ cnpj, setCnpj ] = useState('');
@@ -19,14 +19,14 @@ export default function NewFin() {
       return
     }
 
-    try {
-      await CompanyService().registerCompany({ name, reason_social: 
-        reasonSocial, cnpj, email, interest_rate: interestRate, address});
-      alert("CADASTRO CRIADO")
-    } catch (error) {
-      alert("CADASTRO NÃO INSERIDO, ERRO");
-      console.log(error);  
-    }
+    await CompanyService.registerCompany({
+      name,
+      reason_social: reasonSocial,
+      cnpj,
+      email,
+      interest_rate: interestRate,
+      address
+    });
   }
 
   return (

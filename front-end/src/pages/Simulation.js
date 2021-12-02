@@ -2,8 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 
 import { Input, Button, Select } from "../components";
 import { AuthContext } from "../hooks/auth";
-import { ContractService } from "../services";
-import CompanyService from "../services/Company";
+import { CompanyService, ContractService } from "../services";
 
 export default function Home() {
   // const [cpf, setCpf] = useState();
@@ -19,7 +18,7 @@ export default function Home() {
   const [data, setData] = useState([]);
   useEffect(() => {
     async function execute() {
-      const { data } = await CompanyService().getCompanies();
+      const { data } = await CompanyService.getCompanies();
       setData(data);
     }
     execute();
@@ -39,7 +38,7 @@ export default function Home() {
 
     try {
       const company = data.find((company) => company.name === financial);
-      await ContractService().addNewContract({
+      await ContractService.registerContract({
         user_id: user.id,
         company_id: company.id,
         type_contract: typeContract,
