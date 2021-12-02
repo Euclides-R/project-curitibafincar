@@ -1,30 +1,29 @@
 const axios = require('axios');
 
-const HOST_URL = 'http://localhost:3333';
-
 const getCompanies = async () => {
-    return await axios.get(`${HOST_URL}/companies`);
-}
+  return await axios.get(`${process.env.API_HOST}/companies`);
+};
 
 const getCompanyById = async (id) => {
-    return await axios.get(`${HOST_URL}/company/${id}`);
-}
+  return await axios.get(`${process.env.API_HOST}/company/${id}`);
+};
 
 const registerCompany = async (data) => {
-    const {name, reason_social, cnpj, email, interest_rate, address} = data;
-    return await axios.post(`${HOST_URL}/registercompany`, {
-        name, reason_social, cnpj, email, interest_rate, address
-    });
-}
+  return await axios.post(`${process.env.API_HOST}/registercompany`, data);
+};
 
 const putCompanyById = async (id) => {
-    return await axios.pus(`${HOST_URL}/company/${id}`);
-}
+  return await axios.pus(`${process.env.API_HOST}/company/${id}`);
+};
 
 const deleteCompanyById = async (id) => {
-    return await axios.delete(`${HOST_URL}/company/${id}`);
-}
+  return await axios.delete(`${process.env.API_HOST}/company/${id}`);
+};
 
-export default function CompanyService() {
-    return {getCompanies, registerCompany}
-}
+export {
+  getCompanies,
+  getCompanyById,
+  registerCompany,
+  putCompanyById,
+  deleteCompanyById
+};

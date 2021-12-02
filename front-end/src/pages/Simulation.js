@@ -57,7 +57,7 @@ export default function Home() {
     <div className="show-box radius-form">
       <h1 className="title-page"> Simulação de Financiamento </h1>
       <form onSubmit={handleSubmit} className="simulation-box text-size">
-        <p>C.P.F: *</p>
+        <p>CPF: *</p>
         <Input value={user.cpf} type="text" placeHolder={user.cpf} disabled />
         <p>Financeira: *</p>
         <Select

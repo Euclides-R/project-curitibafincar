@@ -22,8 +22,8 @@ export default function Home(){
       alert("CADASTRO CRIADO")
     } catch (error) {
       alert("CADASTRO NÃO INSERIDO, ERRO");
-      console.log(error);  
-    }    
+      console.log(error);
+    }
   }
 
     return(
@@ -37,7 +37,7 @@ export default function Home(){
                   type="text"
                   placeHolder="Curitiba"
                 />
-              <p>C.P.F: *</p>
+              <p>CPF: *</p>
                 <Input
                   value={cpf}
                   onChange={(e) => {setCpf(e.target.value)}}

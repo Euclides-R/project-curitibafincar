@@ -28,7 +28,7 @@ export default function Home() {
     <div className="show-box radius-form">
       <h1 className="title-page">Recuperar senha</h1>
       <form onSubmit={handleSubmit} className="text-size">
-        <p>C.P.F:</p>
+        <p>CPF:</p>
         <Input
           value={cpf}
           onChange={(e) => {
