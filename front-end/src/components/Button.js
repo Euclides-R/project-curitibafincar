@@ -3,17 +3,18 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 
-export default function Button({ 
+export default function Button({
   children,
   kind,
   className,
-  url
+  url,
+  type
 }) {
   if (url) {
     return (
-      <Link 
+      <Link
         className={classnames(`btn btn-${kind}`, className)}
-        to={url} 
+        to={url}
       >
         {children}
       </Link>
@@ -21,16 +22,18 @@ export default function Button({
   }
 
   return (
-    <button className={classnames(`btn btn-${kind}`, className)}>
-      {children} 
+    <button className={classnames(`btn btn-${kind}`, className)} type={type}>
+      {children}
     </button>
   );
 }
 
 Button.propTypes = {
-  kind: PropTypes.string
+  kind: PropTypes.string,
+  type: PropTypes.string
 };
 
 Button.defaultProps = {
   kind: 'primary',
+  type: 'button'
 };

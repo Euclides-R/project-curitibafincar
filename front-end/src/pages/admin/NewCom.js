@@ -1,81 +1,85 @@
 import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 
 import { Button, Input } from '../../components';
 import { CompanyService } from '../../services';
 
-export default function NewFin() {
-  
-  const [ name, setName ] = useState('');
-  const [ reasonSocial, setReasonSocial ] = useState('');
-  const [ cnpj, setCnpj ] = useState('');
-  const [ email, setEmail ] = useState('');
-  const [ interestRate, setInterestRate ] = useState('');
-  const [ address, setAddress ] = useState('');
+export default function NewCom() {
+  const {
+    register, handleSubmit, errors, formState,
+  } = useForm();
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    if (!name || !reasonSocial || !cnpj || !email || !interestRate || !address) {
-      alert("TODOS OS CAMPOS SÃO OBRIGATÓRIOS");
-      return
-    }
+  const handleOnSubmit = async (payload, e) => {
+    e.persist();
 
-    try {
-      await CompanyService().registerCompany({ name, reason_social: 
-        reasonSocial, cnpj, email, interest_rate: interestRate, address});
-      alert("CADASTRO CRIADO")
-    } catch (error) {
-      alert("CADASTRO NÃO INSERIDO, ERRO");
-      console.log(error);  
+    if (!formState.isSubmitting) {
+      let requestStatus = 'success';
+      try {
+        const { data } = await CompanyService.registerCompany(payload);
+        console.log(data);
+      } catch (error) {
+        requestStatus = 'error';
+      }
+
+      if (requestStatus === 'success') history.push('/companies');
     }
-  }
+  };
+
+  const requiredMessage = { required: 'É obrigatório' };
 
   return (
     <div className='show-box radius-form'>
       <h1 className="title-page">Cadastrar nova Financeira</h1>
-      <form onSubmit={handleSubmit} className='text-size'>
-        <p>Empresa: *</p>
+      <form className='text-size' onSubmit={handleSubmit(handleOnSubmit)}>
+        <label>Empresa: *</label>
         <Input
-          value={name}
-          onChange={(e) => { setName(e.target.value) }}
+          ref={register(requiredMessage)}
+          name="name"
+          errorMessage={errorMessageFor('name', errors)}
           type="text"
           placeHolder="Curitiba"
         />
-        <p>Razão Social *</p>
+        <label>Razão Social *</label>
         <Input
-          value={reasonSocial}
-          onChange={(e) => { setReasonSocial(e.target.value) }}
+          ref={register(requiredMessage)}
+          name="reason_social"
+          errorMessage={errorMessageFor('reason_social', errors)}
           type="text"
           placeHolder="Financiodora de Veículos"
         />
-        <p>CNPJ: *</p>
+        <label>CNPJ: *</label>
         <Input
-          value={cnpj}
-          onChange={(e) => { setCnpj(e.target.value) }}
+          ref={register(requiredMessage)}
+          name="cnpj"
+          errorMessage={errorMessageFor('cnpj', errors)}
           type="text"
           placeHolder="11.111.111/0001-11"
         />
-        <p>Endereço SEDE: *</p>
+        <label>Endereço SEDE: *</label>
         <Input
-          value={address}
-          onChange={(e) => { setAddress(e.target.value) }}
+          ref={register(requiredMessage)}
+          name="address"
+          errorMessage={errorMessageFor('address', errors)}
           type="text"
           placeHolder="R. XV de Novembro, 2120"
         />
-        <p>Email: *</p>
+        <label>Email: *</label>
         <Input
-          value={email}
-          onChange={(e) => { setEmail(e.target.value) }}
+          ref={register(requiredMessage)}
+          name="email"
+          errorMessage={errorMessageFor('email', errors)}
           type="text"
-          placeHolder="curitibafincar@financas.com.br"
+          placeHolder="example@email.com"
         />
-        <p>Taxa de Juros: *</p>
+        <label>Taxa de Juros: *</label>
         <Input
-          value={interestRate}
-          onChange={(e) => { setInterestRate(e.target.value) }}
+          ref={register(requiredMessage)}
+          name="interest_rate"
+          errorMessage={errorMessageFor('interest_rate', errors)}
           type="text"
-          placeHolder="5%"
+          placeHolder="0%"
         />
-        <Button className="btn-signup radius-form">Cadastrar</Button>
+        <Button className="btn-signup radius-form" type="submit">Cadastrar</Button>
       </form>
       <Button className="btn-position radius-form" kind="second" url="/AdminHome">Voltar</Button>
     </div>
