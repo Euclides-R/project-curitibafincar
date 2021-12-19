@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 
 import { Input, Button } from '../../components';
 
-const Home = ({
+const SignIn = ({
     history
 }) => {
     const [inputLogin, setInputLogin] = useState({});
@@ -74,4 +74,4 @@ const Home = ({
     );
 };
 
-export default withRouter(Home);
+export default withRouter(SignIn);

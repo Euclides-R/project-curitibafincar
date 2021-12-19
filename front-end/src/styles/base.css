@@ -16,7 +16,7 @@ body {
   font-weight: 400;
   height: 100vh;
   color: #333;
-  background: linear-gradient(to top left, #2193b0 0%, #2FBF71 100%);
+  background: linear-gradient(to top left, #003355 0%, #03A6B8 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,10 +36,18 @@ form {
 }
  
 :root {
-  --black: #3F334D;
-  --blue: #2193b0;
-  --gray-text: #636363;
-  --green-theme: #00cdac;
+  --black: #0d1317;
+  --blue0: #00111C;
+  --blue1: #002239;
+  --blue2: #003355;
+  --blue3: #006FB9;
+  --blue4: #0099ff;
+  --gray-text: #B8BACF;
+  --green0: #006e90;
+  --green1: #028aa4;
+  --green2: #03A6B8;
+  --green3: #05c3cb;
+  --green4: #06dfdf;
   --white-back: #f5f7fb;
 }
 
@@ -63,12 +71,12 @@ form {
 
 .title-page {
   font-size: 32px;
-  color: var(--blue);
+  color: var(--green1);
   margin: 0;
 }
 
 .text-size p {
-  color: var(--blue);
+  color: var(--green1);
   font-size: 17.5px;
   text-align: left;
 }
