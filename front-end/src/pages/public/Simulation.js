@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 
-import { Input, Button, Select } from "../components";
-import { AuthContext } from "../hooks/auth";
-import { CompanyService, ContractService } from "../services";
+import { Input, Button, Select } from "../../components";
+import { AuthContext } from "../../hooks/auth";
+import { CompanyService, ContractService } from "../../services";
 
 export default function Home() {
   // const [cpf, setCpf] = useState();
@@ -84,7 +84,7 @@ export default function Home() {
           onChange={(e) => {
             setValue(e.target.value);
           }}
-          type="number"
+          type="text"
           placeHolder="R$ 12.345,56"
         />
         <p>Parcelas: *</p>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { UserService } from "../services";
+import { UserService } from "../../services";
 
-import { Input, Button } from "../components";
+import { Input, Button } from "../../components";
 
 export default function Home() {
   const [cpf, setCpf] = useState("");
@@ -16,7 +16,7 @@ export default function Home() {
     // }
 
     try {
-      await UserService().resetPasswordUser({ cpf, password: oldPassword, newPassword });
+      await UserService.resetPasswordUser({ cpf, password: oldPassword, newPassword });
       alert("SENHA ALTERADA COM SUCESSO!!!");
     } catch (error) {
       alert("SENHA, NÃO ALTERA");
@@ -50,7 +50,7 @@ export default function Home() {
         <Input
           value={newPassword}
           onChange={(e) => setNewPassword(e.target.value)}
-          type="text"
+          type="password"
           placeHolder="Digite novamente sua senha"
         />
         <Button className="btn-rp radius-form">Confirmar</Button>

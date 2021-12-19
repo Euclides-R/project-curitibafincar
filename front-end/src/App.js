@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import { Home, SignUp, Simulation, ResetPass } from "./pages";
-import { Companies, NewCom, ProposalsReceived, AllProposals, AdminHome } from './pages/admin';
+import { Home, SignUp, Simulation, ResetPass } from "./pages/public";
+import { Companies, NewCom, ProposalsReceived, AdminHome } from './pages/admin';
 import { DefaultLayout } from "./layouts";
 
 import Private from './routes/private/Private';
@@ -16,13 +16,12 @@ export default function App() {
         <DefaultLayout>
           <Route exact path='/' component={Home} />
           <Route exact path='/adminhome' component={AdminHome} />
-          <Route exact path='/allproposals' component={AllProposals} />  
           <Route exact path='/companies' component={Companies} />
           <Route exact path='/newcom' component={NewCom} />
-          <Route exact path='/resetPass' component={ResetPass} />
-          <Route exact path='/signUp' component={SignUp} />
+          <Route exact path='/reset-pass' component={ResetPass} />
+          <Route exact path='/sign-up' component={SignUp} />
           <Route exact path='/simulation' component={Simulation} />
-          <Route exact path='/proposalsreceived' component={ProposalsReceived} />
+          <Route exact path='/proposals-received' component={ProposalsReceived} />
         </DefaultLayout>
       </Router>
     </AuthProvider>

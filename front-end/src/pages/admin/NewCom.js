@@ -19,14 +19,14 @@ export default function NewFin() {
       return
     }
 
-    await CompanyService.registerCompany({
-      name,
-      reason_social: reasonSocial,
-      cnpj,
-      email,
-      interest_rate: interestRate,
-      address
-    });
+    try {
+      await CompanyService.registerCompany({ name, reason_social: 
+        reasonSocial, cnpj, email, interest_rate: interestRate, address});
+      alert("CADASTRO CRIADO")
+    } catch (error) {
+      alert("CADASTRO NÃO INSERIDO, ERRO");
+      console.log(error);  
+    }
   }
 
   return (

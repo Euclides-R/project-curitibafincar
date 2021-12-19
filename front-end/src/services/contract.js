@@ -10,7 +10,7 @@ const getContractById = async (id) => {
   return await axios.get(`${HOST_URL}/contract/${id}`);
 }
 
-const addNewContract = async (data) => {
+const registerContract = async (data) => {
   return await axios.post(`${HOST_URL}/newcontract`, data);
 }
 
@@ -25,7 +25,7 @@ const deleteContractById = async (id) => {
 export default {
   getContracts,
   getContractById,
-  addNewContract,
+  registerContract,
   putContract,
   deleteContractById
 }

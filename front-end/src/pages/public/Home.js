@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
-import { AuthContext } from '../hooks/auth';
+import { AuthContext } from '../../hooks/auth';
 import { withRouter } from 'react-router';
 
-import { Input, Button } from '../components';
+import { Input, Button } from '../../components';
 
 const Home = ({
     history
@@ -17,7 +17,7 @@ const Home = ({
         try {
             await verifyAccount(inputLogin);
             if (user.password) {
-                renderpage()
+                renderpage();
             }
         } catch (error) {
             console.log(error);
@@ -26,7 +26,6 @@ const Home = ({
     }
 
     function renderpage() {
-        
         if (user.type_user === 'user') {
             return history.push('/simulation');
         } else if (user.type_user === 'adm') {
@@ -68,8 +67,8 @@ const Home = ({
                 <Button className="login-button radius-form">Entrar</Button>
             </form>
             <div className="other-options">
-                <p>Esqueceu sua senha? <a href="/ResetPass">Clique aqui</a></p>
-                <p>Não possui cadastro? <a href="/SignUp">Clique aqui</a></p>
+                <p>Esqueceu sua senha? <a href="/reset-pass">Clique aqui</a></p>
+                <p>Não possui cadastro? <a href="/sign-up">Clique aqui</a></p>
             </div>
         </div>
     );

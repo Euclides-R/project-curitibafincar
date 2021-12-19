@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { UserService } from '../services';
+import { UserService } from '../../services';
 
-import { Input, Button } from '../components';
+import { Input, Button } from '../../components';
 
-export default function Home(){
+export default function Home() {
 
   const [name, setName] = useState('');
   const [cpf, setCpf] = useState('');
@@ -18,7 +18,7 @@ export default function Home(){
     }
 
     try {
-      await UserService().registerUser({ name, cpf, email, password });
+      await UserService.registerUser({ name, cpf, email, password });
       alert("CADASTRO CRIADO")
     } catch (error) {
       alert("CADASTRO NÃO INSERIDO, ERRO");

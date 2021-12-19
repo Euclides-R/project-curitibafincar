@@ -10,7 +10,7 @@ export default function Companies() {
     const [data, setData] = useState([]);
     useEffect(() => {
         async function execute() {
-            const {data} = await CompanyService();
+            const {data} = await CompanyService.getCompanies();
             setData(data);
         }
         execute();
