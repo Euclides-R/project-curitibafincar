@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 
 import { Input, Button, Select } from "../../components";
-import { AuthContext } from "../../hooks/auth";
+import { AuthCokkntext } from "../../hooks/auth";
 import { CompanyService, ContractService } from "../../services";
 
 export default function Home() {
